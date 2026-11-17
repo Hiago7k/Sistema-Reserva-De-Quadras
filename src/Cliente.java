@@ -1,16 +1,16 @@
 public class Cliente {
-    private int codigo;
+    private int id;
     private String nome;
     private boolean situacao;
 
-    public Cliente(int codigo, String nome, boolean situacao) {
-        this.codigo = codigo;
+    public Cliente(int id, String nome, boolean situacao) {
+        this.id = id;
         this.nome = nome;
         this.situacao = situacao;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public int getId() {
+        return id;
     }
 
     public boolean isSituacao() {
@@ -22,8 +22,8 @@ public class Cliente {
     }
 
     public void dadosCliente() {
-        System.out.printf("%d | %s | %s ",
-                this.codigo,
+        System.out.printf("%d | %s | %s %n",
+                this.getId(),
                 this.getNome(),
                 this.isSituacao() ? "Ativo" : "Bloqueado"
         );

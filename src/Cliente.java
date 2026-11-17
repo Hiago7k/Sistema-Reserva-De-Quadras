@@ -9,6 +9,15 @@ public class Cliente {
         this.situacao = situacao;
     }
 
+    public void setBloquearCliente(){
+        this.situacao = false;
+    }
+
+    public void setDesbloquearCliente(){
+        this.situacao = true;
+    }
+
+
     public int getId() {
         return id;
     }

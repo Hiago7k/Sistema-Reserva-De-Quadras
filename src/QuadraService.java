@@ -27,11 +27,34 @@ public class QuadraService {
             return null;
         }
 
-
-        System.out.printf("Quadra cadastrada com sucesso!%n");
         Quadra quadra = new Quadra(codigo, nome, valorPorHora, situacao);
         quadras.add(quadra);
 
         return quadra;
+    }
+
+
+    public static void listarQuadras() {
+        if (quadras.isEmpty()) {
+            System.out.printf("Nenhuma quadra cadastrada!");
+            return;
+        }
+
+        for (Quadra quadra : quadras) {
+            quadra.dadosQuadra();
+        }
+
+    }
+
+    public static Quadra buscarQuadraId(int codigo) {
+        for (Quadra quadra : quadras) {
+            if (quadra.getCodigo() == codigo) {
+                quadra.dadosQuadra();
+                return quadra;
+            }
+        }
+
+        System.out.printf("Nenhuma quadra com esse id%n");
+        return null;
     }
 }

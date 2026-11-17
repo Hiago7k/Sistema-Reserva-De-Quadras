@@ -24,8 +24,12 @@ public class Reservar {
     }
 
 
-    void setSituacaoDaReserva() {
+    public void setSituacaoDaReserva() {
         this.situacaoDaReserva = true;
+    }
+
+    public void setCancelarResrva(){
+        this.situacaoDaReserva = false;
     }
 
     public int getCodigo() {

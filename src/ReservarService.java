@@ -1,3 +1,4 @@
+import java.time.Duration;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.util.LinkedList;
@@ -18,21 +19,27 @@ public class ReservarService {
         }
 
         if (dataHorarioTermino.isBefore(dataHorarioInicio)) {
-            System.out.printf("Erro a data de termino deve ser maior que a data de inicio%n");
+            System.out.printf("Erro a data de termino deve ser maior que a data de inicio %n");
             return;
         }
 
-        if (dataHorarioTermino.isAfter(dataHorarioInicio)) {
-            System.out.printf("Erro data de termino, é igual a de inicio");
+        if (dataHorarioTermino.isEqual(dataHorarioInicio)) {
+            System.out.printf("Erro data de termino, é igual a de inicio %n");
             return;
         }
 
         // uma quadra não pode possuir duas reservas com horarios conflitantes
         // Uma reserva precisa ter duração mínima de uma hora.
         //  O valor total deve considerar o período reservado.
+        Duration duracao = Duration.between(dataHorarioInicio, dataHorarioTermino);
 
-        int tempo = dataHorarioTermino.compareTo(dataHorarioInicio);
+
+        Long tempo = duracao.toHours();
         double valorTotalDaReserva = tempo * quadraReservada.getValorPorhora();
+        System.out.println("-----------------------------------------");
+        System.out.println(tempo);
+        System.out.println(valorTotalDaReserva);
+        System.out.println("-----------------------------------------");
         System.out.printf("Reserva Aceita%n");
         Reservar reservar = new Reservar(codigo, clienteResponsavel, dataHorarioInicio, dataHorarioTermino, quadraReservada, valorTotalDaReserva);
         reservar.setSituacaoDaReserva();
@@ -65,7 +72,7 @@ public class ReservarService {
             }
         }
 
-        System.out.printf("Cliente não possui nenhuma reserva!");
+        System.out.printf("Cliente não possui nenhuma reserva!%n");
     }
 
     public void cancelarUmaReserva(int codigo) {

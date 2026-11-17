@@ -65,7 +65,7 @@ public class Reservar {
     }
 
     public void dadosReserva() {
-        System.out.printf("%d | %s | %s | Data inicio %s | Data termino %s | Valor Por hora R$ %.2f | Total R$ %.2f | Situação reserva %s%n ",
+        System.out.printf("%d | %s | Data inicio %s | Data termino %s | Valor Por hora R$ %.2f | Total R$ %.2f | Situação reserva %s%n ",
                 this.getCodigo(),
                 clienteResponsavel.getNome(),
                 this.getDataHorarioInicio(),

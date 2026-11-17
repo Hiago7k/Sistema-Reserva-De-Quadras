@@ -22,7 +22,7 @@ public class ClienteService {
         }
 
         Cliente cliente = new Cliente(id, nome, situacao);
-        System.out.printf("Cliente criado com êxito%n");
+        //   System.out.printf("Cliente criado com êxito%n");
         clientes.add(cliente);
         return cliente;
     }

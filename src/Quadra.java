@@ -1,10 +1,10 @@
-public class Quadras {
+public class Quadra {
     private int codigo;
     private String nome;
     private double valorPorhora;
     private boolean situacao;
 
-    public Quadras(int codigo, String nome, double valorPorhora, boolean situacao) {
+    public Quadra(int codigo, String nome, double valorPorhora, boolean situacao) {
         this.codigo = codigo;
         this.nome = nome;
         this.valorPorhora = valorPorhora;

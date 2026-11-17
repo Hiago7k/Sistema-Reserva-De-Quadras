@@ -12,17 +12,21 @@ public class Reservar {
 
     public Reservar(int codigo, Cliente clienteResponsavel, OffsetDateTime dataHorarioInicio,
                     OffsetDateTime dataHorarioTermino,
-                    double valorTotal, boolean situacaoDaReserva, Quadra quadraReservada) {
+                    Quadra quadraReservada, double valorTotal) {
         this.codigo = codigo;
         this.clienteResponsavel = clienteResponsavel;
         this.dataHorarioInicio = dataHorarioInicio;
         this.dataHorarioTermino = dataHorarioTermino;
         this.valorPorHoraAtual = quadraReservada.getValorPorhora();
         this.valorTotal = valorTotal; // diferenca das horas *
-        this.situacaoDaReserva = situacaoDaReserva;
+        this.situacaoDaReserva = false;
         this.quadraReservada = quadraReservada;
     }
 
+
+    void setSituacaoDaReserva() {
+        this.situacaoDaReserva = true;
+    }
 
     public int getCodigo() {
         return codigo;
